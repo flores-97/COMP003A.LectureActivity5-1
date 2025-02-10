@@ -3,9 +3,28 @@
     internal class Car
     {
         //Fields
-        public string Make;
-        public string Model;
-        public int Year;
+        public string make;
+        public string model;
+        public int year;
+
+        //properties
+        public string Make
+        {
+            get { return make; }
+            set { make = value; }
+        }
+
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
+   
+        public int Year
+        {
+            get { return year; }
+            set { if (value >= 1886) year = value; }
+        }
 
         ///<summary>
         ///Display car information
@@ -29,12 +48,12 @@
 
         static void Main(string[] args)
         {
-            //Car myCar = new Car();
-            //myCar.Make = "Toyota";//creates new car object
-            //myCar.Model = "Supra";//car's make
-            //myCar.Year = 2024;//car's year
             Car myCar = new Car("Honda", "Civic", 2021);
-            
+            myCar.DisplayInfo();
+
+            myCar.Make = "Toyota";//creates new car object
+            myCar.Model = "Corrolla";//car's make
+            myCar.Year = 2020;//car's year
             myCar.DisplayInfo();
         }
     }
